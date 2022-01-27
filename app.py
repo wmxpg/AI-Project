@@ -16,7 +16,7 @@ print("Loading model")
 #sess = tf.compat.v1.Session()
 #set_session(sess)
 global model 
-model = load_model('my_cifar10_model.h5') 
+model = load_model('model.h5') 
 #global graph
 #graph = tf.compat.v1.get_default_graph()
 
@@ -43,17 +43,16 @@ def prediction(filename):
     model.run_eagerly=True  
     probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
     print(probabilities)
-    #Step 4
-    number_to_class = ['airplane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 
-'truck']
+    #Step 4 ('Gieon': 0,'Haitah': 1, 'Jonathan': 2,'KinHong': 3, 'Perri': 4,  'Suhaimi': 5)
+    number_to_class = ['Gieon', 'Haitah', 'Jonathan', 'KinHong', 'Perri', 'Suhaimi']
     index = np.argsort(probabilities)
     predictions = {
-      "class1":number_to_class[index[9]],
-      "class2":number_to_class[index[8]],
-      "class3":number_to_class[index[7]],
-      "prob1":probabilities[index[9]],
-      "prob2":probabilities[index[8]],
-      "prob3":probabilities[index[7]],
+      "class1":number_to_class[index[5]],
+      "class2":number_to_class[index[4]],
+      "class3":number_to_class[index[3]],
+      "prob1":probabilities[index[5]],
+      "prob2":probabilities[index[4]],
+      "prob3":probabilities[index[3]],
      }
     #Step 5
     return render_template('predict.html', predictions=predictions)
