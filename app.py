@@ -4,8 +4,8 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
-from tensorflow.keras.models import load_model 
-from tensorflow.keras.backend import set_session
+from keras.models import load_model 
+from keras.backend import set_session
 from skimage.transform import resize 
 import matplotlib.pyplot as plt 
 import tensorflow as tf 
