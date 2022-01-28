@@ -35,6 +35,7 @@ def prediction(filename):
     my_image = plt.imread(os.path.join('uploads', filename))
     #Step 2
     my_image_re = resize(my_image, (48,48))
+    my_image_re = skimage.color.rgb2gray(my_image) #added this line to change to grayscale
     
     #Step 3
     #with graph.as_default():
