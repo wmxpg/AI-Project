@@ -47,15 +47,15 @@ def prediction(filename):
     #probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
     print(probabilities)
     #Step 4 ('Gieon': 0,'Haitah': 1, 'Jonathan': 2,'KinHong': 3, 'Perri': 4,  'Suhaimi': 5)
-    number_to_class = ['Gieon', 'Haitah', 'Jonathan', 'KinHong', 'Perri', 'Suhaimi']
+    number_to_class = ['Gieon':0, 'Haitah':1, 'Jonathan':2, 'KinHong':3, 'Perri':4, 'Suhaimi':5] #number_to_class = ['Gieon', 'Haitah', 'Jonathan', 'KinHong', 'Perri', 'Suhaimi']
     index = np.argsort(probabilities)
     predictions = {
-      "class1":number_to_class[index[6]], #"class1":number_to_class[index[5]],
-      "class2":number_to_class[index[5]], #"class2":number_to_class[index[4]],
-      "class3":number_to_class[index[4]], #"class3":number_to_class[index[3]],
-      "prob1":probabilities[index[6]], #"prob1":probabilities[index[5]],
-      "prob2":probabilities[index[5]], #"prob2":probabilities[index[4]],
-      "prob3":probabilities[index[4]], #"prob3":probabilities[index[3]],
+      "class1":number_to_class[index[5]],
+      "class2":number_to_class[index[4]],
+      "class3":number_to_class[index[3]],
+      "prob1":probabilities[index[5]],
+      "prob2":probabilities[index[4]],
+      "prob3":probabilities[index[3]],
      }
     #Step 5
     return render_template('predict.html', predictions=predictions)
