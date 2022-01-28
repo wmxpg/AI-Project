@@ -29,7 +29,7 @@ def main_page():
         return redirect(url_for('prediction', filename=filename))
     return render_template('index.html')
 
-@app.route('/prediction/<filename>') 
+@app.route('/input/inputdata/InputData/<filename>') 
 def prediction(filename):
     #Step 1
     my_image = plt.imread(os.path.join('uploads', filename))
