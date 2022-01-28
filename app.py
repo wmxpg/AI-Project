@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 from keras.models import load_model 
 from keras.backend import set_session
-from skimage.transform import resize 
+from skimage.transform import resize
+from skimage.color import rgb2gray #added this import to change gray
 import matplotlib.pyplot as plt 
 import tensorflow as tf 
 import numpy as np 
