@@ -43,7 +43,7 @@ def prediction(filename):
       #set_session(sess)
       #Add
     model.run_eagerly=True  
-    probabilities = model.predict(np.array( [my_image_re,] ))
+    probabilities = model.predict(np.array( [my_image_re,] ))[0,:] #probabilities = model.predict(np.array( [my_image_re,] ))
     #probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
     print(probabilities)
     #Step 4 ('Gieon': 0,'Haitah': 1, 'Jonathan': 2,'KinHong': 3, 'Perri': 4,  'Suhaimi': 5)
