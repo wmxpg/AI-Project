@@ -35,8 +35,8 @@ def prediction(filename):
     #Step 1
     my_image = plt.imread(os.path.join('uploads', filename))
     #Step 2
-    my_image_re = resize(my_image, (48,48))
-    my_image_re = rgb2gray(my_image) #my_image_re = skimage.color.rgb2gray(my_image) this code not working - added this line to change to grayscale
+    my_image_reo = resize(my_image, (48,48)) #my_image_re = resize(my_image, (48,48))
+    my_image_re = rgb2gray(my_image_reo) #my_image_re = rgb2gray(my_image) seems working but the resize become not working - added this line to change to grayscale
     
     #Step 3
     #with graph.as_default():
