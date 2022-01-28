@@ -1,8 +1,6 @@
 numpy
+cv2
 Flask
 matplotlib
-pandas
 tensorflow-cpu
-scikit-learn
-scikit-image
 gunicorn
