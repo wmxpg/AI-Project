@@ -1,6 +1,8 @@
 numpy
-opencv-python
+pandas
 Flask
 matplotlib
 tensorflow-cpu
 gunicorn
+scikit-learn
+scikit-image
