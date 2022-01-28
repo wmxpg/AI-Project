@@ -2,7 +2,7 @@ numpy
 pandas
 Flask
 matplotlib
-tensorflow-cpu
+tensorflow-cpu=2.4.1
 gunicorn
 scikit-learn
 scikit-image
