@@ -43,20 +43,19 @@ def prediction(filename):
       #set_session(sess)
       #Add
     model.run_eagerly=True  
-    predictions = model.predict(np.array( [my_image_re,] )) #probabilities = model.predict(np.array( [my_image_re,] ))
-    #probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
-    print(predictions) #print(probabilities)
-    #Step 4 ('Gieon': 0,'Haitah': 1, 'Jonathan': 2,'KinHong': 3, 'Perri': 4,  'Suhaimi': 5)
-    #number_to_class = ['Gieon', 'Haitah', 'Jonathan', 'KinHong', 'Perri', 'Suhaimi']
-    #index = np.argsort(probabilities)
-    #predictions = {
-    #  "class1":number_to_class[index[5]],
-    #  "class2":number_to_class[index[4]],
-    #  "class3":number_to_class[index[3]],
-    #  "prob1":probabilities[index[5]],
-    #  "prob2":probabilities[index[4]],
-    #  "prob3":probabilities[index[3]],
-    # }
+    probabilities = model.predict(np.array( [my_image_re,] ))[0,:] #prev.working: predictions = model.predict(np.array( [my_image_re,] ))
+    print(probabilities) #prev.working: print(predictions)
+    #Step 4 
+    number_to_class = ['Gieon', 'Haitah', 'Jonathan', 'KinHong', 'Perri', 'Suhaimi'] #prev.working: disable this
+    index = np.argsort(probabilities) #prev.working: disable this
+    predictions = { #prev.working: disable this
+      "class1":number_to_class[index[5]], #prev.working: disable this
+      "class2":number_to_class[index[4]], #prev.working: disable this
+      "class3":number_to_class[index[3]], #prev.working: disable this
+      "prob1":probabilities[index[5]], #prev.working: disable this
+      "prob2":probabilities[index[4]], #prev.working: disable this
+      "prob3":probabilities[index[3]], #prev.working: disable this
+     } #prev.working: disable this
     #Step 5
     return render_template('predict.html', predictions=predictions)
 
