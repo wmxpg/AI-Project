@@ -49,7 +49,7 @@ def prediction(filename):
     number_to_class = ['Gieon', 'Haitah', 'Jonathan', 'KinHong', 'Perri', 'Suhaimi']
     index = np.argsort(probabilities)
     predictions = {
-      "class1":number_to_class #[index[5]]
+      "class1":number_to_class[index[5]]
      } 
     
     #Step 5
