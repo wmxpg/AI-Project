@@ -55,11 +55,6 @@ def prediction(filename):
       "prob1":probabilities[index[5]], #prev.working: disable this
       "prob2":probabilities[index[4]], #prev.working: disable this
       "prob3":probabilities[index[3]], #prev.working: disable this
-       plt.figure(figsize = (16,16))
-       plt.imshow(my_image_re)
-       plt.axis('off')
-       plt.title(my_image_re)
-       plt.show()
      } #prev.working: disable this
     #Step 5
     return render_template('predict.html', predictions=predictions)
